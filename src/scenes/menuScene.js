@@ -11,8 +11,7 @@ export default class MenuScene extends Phaser.Scene {
   }
 
   create () {
-    const gameScreen = new GameScreen()
-    this.boton = new Boton(this, gameScreen.getRelativePositionX(50), gameScreen.getRelativePositionY(50), 'buttonplay', 0)
+    this.boton = new Boton(this, GameScreen.getRelativePositionX(50), GameScreen.getRelativePositionY(50), 'buttonplay', 0)
     this.boton.click = () => {
       this.scene.add('MainScene', new MainScene())
       this.scene.add('ScoreScene', new ScoreScene())

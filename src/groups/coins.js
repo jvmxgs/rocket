@@ -17,4 +17,8 @@ export default class Coins extends Phaser.GameObjects.Group {
     const coin = new Coin(scene, x, y)
     this.add(coin)
   }
+
+  update () {
+    console.log(this)
+  }
 }

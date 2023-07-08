@@ -1,16 +1,11 @@
 import config from './config'
 
 export default class GameScreen {
-  constructor () {
-    this.width = config.width
-    this.height = config.height
+  static getRelativePositionX (xPercent) {
+    return config.width * (xPercent / 100)
   }
 
-  getRelativePositionX (xPercent) {
-    return this.width * (xPercent / 100)
-  }
-
-  getRelativePositionY (yPercent) {
-    return this.height * (yPercent / 100)
+  static getRelativePositionY (yPercent) {
+    return config.height * (yPercent / 100)
   }
 }

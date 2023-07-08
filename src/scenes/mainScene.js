@@ -13,28 +13,29 @@ export default class MainScene extends Phaser.Scene {
   }
 
   create () {
-    this.matter.world.setBounds(0, 0, config.width, config.heightWorld)
+    // this.matter.world.setBounds(0, 0, config.width, config.height)
 
     defineAnimations(this)
 
-    this.rocket = new Rocket(this, config.width / 2, config.heightWorld)
+    this.rocket = new Rocket(this, config.width / 2, config.height - 200)
 
-    this.camera = new Camera(this, config.width, config.heightWorld, this.rocket.sprite)
+    this.camera = new Camera(this, config.width, config.height, this.rocket.sprite)
 
     this.panelfinal = new Panelfinal(this, config.width / 2, config.height / 2 - 1500)
 
-    this.coinsF = new Coins(this)
+    this.coins = new Coins(this)
 
-    this.ciclo = 0
+    this.tick = 0
 
     defineCollisions(this)
   }
 
   update () {
-    this.ciclo++
-    if (this.ciclo > 40) {
-      this.coinsF.addCoin(this, Phaser.Math.Between(15, 600), this.rocket.sprite.body.position.y - 1000)
-      this.ciclo = 0
+    this.tick++
+    if (this.tick > 40) {
+      this.coins.addCoin(this, Phaser.Math.Between(150, 600), this.rocket.sprite.body.position.y - 1000)
+      this.tick = 0
+      console.log(this.coins.children.entries.length)
     }
 
     this.camera.update()

@@ -7,8 +7,7 @@ export default class Controls {
   }
 
   chechWhatHalf () {
-    const gameScreen = new GameScreen()
-    this.firstHalf = (this.scene.input.pointer1.x < gameScreen.getRelativePositionX(50))
+    this.firstHalf = (this.scene.input.pointer1.x < GameScreen.getRelativePositionX(50))
   }
 
   keyLeft () {
