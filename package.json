@@ -4,21 +4,21 @@
   "version": "1.0.0",
   "description": "A rocket game",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "serve": "webpack-dev-server --env=development --hot",
+    "dev": "vite",
+    "build": "vite build",
     "lint": "eslint ."
   },
   "keywords": [],
   "author": "Victor",
   "license": "",
   "devDependencies": {
-    "standard": "^16.0.4",
-    "webpack": "^5.58.2",
-    "webpack-cli": "^4.9.0",
-    "webpack-dev-server": "^4.3.1"
+    "standard": "^16.0.4"
   },
   "dependencies": {
-    "phaser": "^3.55.2"
+    "phaser": "^3.55.2",
+    "vite": "^5.2.11"
   },
   "eslintConfig": {
     "extends": "./node_modules/standard/eslintrc.json"
